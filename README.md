@@ -33,18 +33,6 @@ Proyek ini dirancang dengan sistem hak akses berbasis peran, di mana terdapat ti
 
 Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah berikut:
 
-### Panduan Instalasi & Konfigurasi
-
-Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah berikut:
-
-Baik, saya paham. Anda ingin formatnya lebih ringkas dan seragam, di mana setiap judul langkah langsung diikuti oleh blok kodenya, tanpa ada teks penjelasan tambahan di antaranya.
-
-Ini adalah format yang telah direvisi sesuai dengan preferensi Anda. Anda bisa langsung menyalin dan menempelkan seluruh kode ini ke dalam file `README.md` Anda di GitHub.
-
-### Panduan Instalasi & Konfigurasi
-
-Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah berikut:
-
 **1. Clone Repositori & Masuk ke Direktori**
 ```bash
 git clone [https://github.com/RainerAdityatama/Pepustakaan-digital.git](https://github.com/RainerAdityatama/Pepustakaan-digital.git) && cd Pepustakaan-digital
