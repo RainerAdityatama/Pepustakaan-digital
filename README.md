@@ -32,75 +32,92 @@ Proyek ini dirancang dengan sistem hak akses berbasis peran, di mana terdapat ti
 
 Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah berikut:
 
+### Panduan Instalasi & Konfigurasi
+
+Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah berikut:
+
+Baik, saya paham. Anda ingin formatnya lebih ringkas dan seragam, di mana setiap judul langkah langsung diikuti oleh blok kodenya, tanpa ada teks penjelasan tambahan di antaranya.
+
+Ini adalah format yang telah direvisi sesuai dengan preferensi Anda. Anda bisa langsung menyalin dan menempelkan seluruh kode ini ke dalam file `README.md` Anda di GitHub.
+
+### Panduan Instalasi & Konfigurasi
+
+Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah berikut:
+
 **1. Clone Repositori & Masuk ke Direktori**
 ```bash
 git clone [https://github.com/RainerAdityatama/Pepustakaan-digital.git](https://github.com/RainerAdityatama/Pepustakaan-digital.git) && cd Pepustakaan-digital
+````
 
-2. Install Dependensi Composer
+**2. Install Dependensi Composer**
 
-Bash
-
+```bash
 composer install
-3. Konfigurasi Environment
-Salin file .env.example menjadi .env. Kemudian, lakukan konfigurasi database (DB_DATABASE, DB_USERNAME, DB_PASSWORD) di dalam file .env.
+```
 
-Bash
+**3. Konfigurasi Environment**
 
+```bash
 cp .env.example .env
-4. Generate Application Key
+```
 
-Bash
+*(Catatan: Setelah menjalankan perintah ini, jangan lupa untuk mengedit file `.env` dan mengisi detail database Anda: DB\_DATABASE, DB\_USERNAME, DB\_PASSWORD).*
 
+**4. Generate Application Key**
+
+```bash
 php artisan key:generate
-5. Jalankan Migrasi & Seeder Database
-Perintah ini akan membuat semua tabel database dan mengisinya dengan data awal.
+```
 
-Bash
+**5. Jalankan Migrasi & Seeder Database**
 
+```bash
 php artisan migrate --seed
-6. Jalankan Server Lokal
+```
 
-Bash
+**6. Jalankan Server Lokal**
 
+```bash
 php artisan serve
-Aplikasi akan berjalan di http://127.0.0.1:8000.
+```
 
-Membuat Pengguna Admin Pertama
-Proyek ini tidak secara otomatis membuat akun dengan peran 'admin' saat proses seeding. Anda perlu membuatnya secara manual melalui Tinker setelah instalasi selesai.
+### Membuat Pengguna Admin Pertama
 
-1. Jalankan Tinker
+Proses *seeding* tidak membuat akun admin secara otomatis. Ikuti langkah ini untuk membuatnya secara manual.
 
-Bash
+**1. Jalankan Tinker**
 
+```bash
 php artisan tinker
-2. Buat Pengguna Admin
+```
 
-Anda bisa memilih salah satu dari dua cara berikut:
+**2. Buat Pengguna Admin**
 
-Opsi A: Memberikan peran 'admin' ke pengguna yang sudah ada (jika seeder membuat pengguna)
+Pilih salah satu dari dua opsi berikut:
 
-PHP
+  * **Opsi A: Memberikan peran 'admin' ke pengguna yang sudah ada**
 
-// Cari pengguna yang sudah ada (misalnya, user dengan ID 1)
-$user = App\Models\User::find(1);
+    ```php
+    $user = App\Models\User::find(1);
+    $user->assignRole('admin');
+    ```
 
-// Berikan peran 'admin'
-$user->assignRole('admin');
-Opsi B: Membuat pengguna admin baru dari awal
+  * **Opsi B: Membuat pengguna admin baru dari awal**
 
-PHP
+    ```php
+    $admin = App\Models\User::create([
+        'name' => 'Admin User',
+        'email' => 'admin@example.com',
+        'password' => bcrypt('password123')
+    ]);
+    $admin->assignRole('admin');
+    ```
 
-// Buat user baru
-$admin = App\Models\User::create([
-    'name' => 'Admin User',
-    'email' => 'admin@example.com',
-    'password' => bcrypt('password123')
-]);
+**3. Keluar dari Tinker**
 
-// Berikan peran 'admin'
-$admin->assignRole('admin');
-3. Keluar dari Tinker
-Setelah selesai, ketik exit dan tekan Enter.
-
+```bash
 exit
-Sekarang Anda memiliki satu pengguna dengan peran 'admin' dan dapat login untuk mulai mengelola aplikasi.
+```
+
+```
+```
