@@ -118,6 +118,3 @@ Pilih salah satu dari dua opsi berikut:
 ```bash
 exit
 ```
-
-```
-```
