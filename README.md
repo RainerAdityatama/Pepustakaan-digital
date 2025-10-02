@@ -26,7 +26,7 @@ Proyek ini dirancang dengan sistem hak akses berbasis peran, di mana terdapat ti
 - **PHP / Laravel 11**
 - **Tailwind CSS** (untuk styling pada bagian UI)
 - **Laravel Spatie** (untuk penggunaan Middleware)
-- **Laravel Breeze** (untuk autentikasi dan fitur login, register)
+- **Laravel Breeze** (untuk autentikasi (login, register) )
 - **MySQL** (Sebagai database)
 
 ### Panduan Instalasi & Konfigurasi
